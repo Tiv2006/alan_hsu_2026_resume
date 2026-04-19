@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alan T. Hsu — Resume</title>
+<meta name="description" content="Alan T. Hsu — Senior investment leader with a foundation in enterprise software product management and M&A." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #1F3A5F;
+    --text: #222222;
+    --muted: #555555;
+    --rule: #B0B0B0;
+    --bg: #FFFFFF;
+    --page-bg: #F5F5F3;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--page-bg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Toolbar (not printed) */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .btn {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: #17304d;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--accent);
+    border-color: #d5d9df;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent);
+  }
+
+  /* Page */
+  .page {
+    max-width: 8.5in;
+    margin: 32px auto;
+    background: var(--bg);
+    padding: 0.75in;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+  }
+
+  /* Header */
+  .name {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    margin: 0 0 8px 0;
+  }
+
+  .contact {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 24px 0;
+  }
+
+  .contact a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .contact a:hover {
+    color: var(--accent);
+  }
+
+  /* Section headers */
+  .section-header {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 4px;
+    margin: 18px 0 10px 0;
+  }
+
+  /* Body text */
+  p, li {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .summary, .capabilities, .personal {
+    margin: 8px 0 4px 0;
+    text-align: justify;
+  }
+
+  /* Experience */
+  .company-row, .role-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .company-row {
+    margin: 14px 0 4px 0;
+  }
+
+  .company-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .company-meta {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .role-row {
+    margin: 8px 0 2px 0;
+  }
+
+  .role-name {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  .role-dates {
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  ul {
+    margin: 4px 0 4px 0;
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 3px;
+  }
+
+  ul li::marker {
+    color: var(--accent);
+  }
+
+  /* Education */
+  .edu-block {
+    margin: 10px 0 8px 0;
+  }
+
+  .edu-degree {
+    font-style: italic;
+    font-size: 13px;
+    margin: 2px 0;
+  }
+
+  .edu-extras {
+    font-size: 13px;
+    margin: 2px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .page {
+      margin: 12px;
+      padding: 24px;
+    }
+    .name {
+      font-size: 22px;
+    }
+    .contact {
+      font-size: 13px;
+    }
+    .company-row, .role-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+  }
+
+  /* Print */
+  @media print {
+    .toolbar { display: none; }
+    body { background: white; }
+    .page {
+      margin: 0;
+      padding: 0.6in;
+      max-width: 100%;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .page-break-before {
+      page-break-before: always;
+      break-before: page;
+    }
+    @page {
+      margin: 0.5in;
+      size: letter;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a class="btn btn-secondary" href="AHsu_Resume_2026.pdf" download>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
+  <button class="btn btn-primary" onclick="window.print()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Print / Save as PDF
+  </button>
+</div>
+
+<div class="page">
+
+  <h1 class="name">ALAN T. HSU</h1>
+  <div class="contact">
+    Hingham, MA 02043 &nbsp;•&nbsp; (512) 680-4236 &nbsp;•&nbsp; <a href="mailto:ashoe1110@gmail.com">ashoe1110@gmail.com</a>
+  </div>
+
+  <div class="section-header">Summary</div>
+  <p class="summary">
+    Senior investment leader with a foundation in enterprise software product management and M&amp;A. Built and scaled a sustainable infrastructure equity strategy from ~$1M to $1.2B in AUM and launched a market-neutral fund that raised $240M. Earlier career at IBM Software Group spanned product management of $30M+ product lines and M&amp;A diligence on $1.6B+ of acquisitions. Over 15 years developing direct relationships with CEOs, CFOs, and senior leadership teams at public companies across utilities, renewables, industrials, building materials, enterprise software, and information services.
+  </p>
+
+  <div class="section-header">Core Capabilities</div>
+  <p class="capabilities">
+    Business building &amp; P&amp;L growth &nbsp;•&nbsp; Product strategy &amp; launch &nbsp;•&nbsp; M&amp;A diligence and post-integration &nbsp;•&nbsp; Capital allocation &nbsp;•&nbsp; Executive engagement &amp; board-level communication &nbsp;•&nbsp; Commercial pitching &amp; fundraising &nbsp;•&nbsp; Team leadership &nbsp;•&nbsp; Sector strategy (energy, industrials, software)
+  </p>
+
+  <div class="section-header">Experience</div>
+
+  <div class="company-row">
+    <span class="company-name">WELLINGTON MANAGEMENT COMPANY</span>
+    <span class="company-meta">Boston, MA &nbsp;|&nbsp; Aug 2008 – Present</span>
+  </div>
+
+  <div class="role-row">
+    <span class="role-name">Lead Portfolio Manager, Climate Strategy Fund</span>
+    <span class="role-dates">2014 – Present</span>
+  </div>
+  <ul>
+    <li>Built and scaled the strategy from ~$1M in 2015 to $1.2B in AUM today — over 90% AUM CAGR across 11 years</li>
+    <li>Delivered 12.8% compounded annual returns over trailing 10 years</li>
+    <li>Developed deep, longstanding relationships with CEOs, CFOs, and senior leadership teams across hundreds of public companies; directly engaged executives on strategy, capital allocation, and operational priorities</li>
+    <li>Worked closely with product management on product positioning and marketing collateral; drove the sustainability reporting framework and partnered on prospect engagement</li>
+    <li>Informally led a cross-functional team of analysts and specialists; set research priorities and coverage strategy across building materials, industrial services, grid technology, infrastructure, software, and information services</li>
+    <li>Partnered with Wellington's Private Climate Innovation team on diligence of private renewable infrastructure companies</li>
+  </ul>
+
+  <div class="role-row">
+    <span class="role-name">Lead Portfolio Manager, Climate Market Neutral Hedge Fund</span>
+    <span class="role-dates">2021 – 2023</span>
+  </div>
+  <ul>
+    <li>Originated the product concept and led the 0-to-1 launch — from initial strategy design through investor pitching to capital raise</li>
+    <li>Drove $240M total fund raise; deeply involved in pitch development, marketing collateral, and direct engagement with prospective LPs</li>
+    <li>Built and ran the investment process for the new strategy</li>
+  </ul>
+
+  <div class="role-row">
+    <span class="role-name">Global Industry Analyst — Utilities, Renewables, Energy Infrastructure</span>
+    <span class="role-dates">2008 – 2020</span>
+  </div>
+  <ul>
+    <li>Covered global utilities, renewables/cleantech, and energy midstream through a fundamental, executive-engagement-driven research process</li>
+    <li>Built a trusted-advisor reputation with management teams and IR organizations across the utilities and energy value chain; frequent participant in industry conferences, site visits, and direct C-suite dialogue</li>
+    <li>Team analyst on the $2.0B+ Enduring Assets infrastructure strategy (energy, electricity, water, transport) from 2010</li>
+    <li>Lead Portfolio Manager for Wellington Energy Midstream fund, 2015 – 2016</li>
+    <li>Extensive private-market diligence on renewable infrastructure operators to sharpen public-market views</li>
+  </ul>
+
+  <div class="company-row page-break-before">
+    <span class="company-name">IBM, SOFTWARE GROUP</span>
+    <span class="company-meta">Austin, TX &nbsp;|&nbsp; 2000 – 2006</span>
+  </div>
+
+  <div class="role-row">
+    <span class="role-name">Global Business Development Manager — Industry M&amp;A</span>
+    <span class="role-dates">2004 – 2006</span>
+  </div>
+  <ul>
+    <li>Led marketing diligence on IBM's $740M acquisition of MRO Software; co-led post-integration marketing planning for the $865M acquisition of Micromuse</li>
+    <li>Drove strategic initiatives that produced double-digit YoY growth in top client segments</li>
+    <li>Evaluated new business opportunities through detailed industry and market analysis</li>
+  </ul>
+
+  <div class="role-row">
+    <span class="role-name">Software Product Manager</span>
+    <span class="role-dates">2000 – 2004</span>
+  </div>
+  <ul>
+    <li>Owned product strategy, business plan, go-to-market, and P&amp;L projections for $30M+ product lines</li>
+    <li>Shipped three major releases and drove 20%+ YoY growth</li>
+    <li>Led per-product profitability analysis and process streamlining that delivered $2M+ in annual savings</li>
+  </ul>
+
+  <div class="section-header">Education</div>
+
+  <div class="edu-block">
+    <div class="company-row">
+      <span class="company-name">Tuck School of Business at Dartmouth</span>
+      <span class="company-meta">Hanover, NH &nbsp;|&nbsp; 2006 – 2008</span>
+    </div>
+    <div class="edu-degree">Master of Business Administration</div>
+    <div class="edu-extras">Investment Club Co-Chair (2007–2008) &nbsp;•&nbsp; UBS Value-at-Risk Case Competition, Honorable Mention</div>
+  </div>
+
+  <div class="edu-block">
+    <div class="company-row">
+      <span class="company-name">University of Texas at Austin</span>
+      <span class="company-meta">Austin, TX &nbsp;|&nbsp; 1995 – 2000</span>
+    </div>
+    <div class="edu-degree">Master of Professional Accounting &nbsp;|&nbsp; BBA in Accounting &nbsp;|&nbsp; Economics Minor</div>
+    <div class="edu-extras">Beta Alpha Psi Accounting Honor Society &nbsp;•&nbsp; Leadership Board &nbsp;•&nbsp; Student Government</div>
+  </div>
+
+</div>
+
+</body>
+</html>
